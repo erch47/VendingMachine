@@ -8,10 +8,8 @@ namespace VendingMachine
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            var soda = new Sodas();
-            soda.ProductName = "Coca Cola";
-            var soda2 = new Sodas();
-            soda2.ProductName = "Fanta";
+            var soda = new Sodas("Coca Cola", TODO);
+            var soda2 = new Sodas("Fanta", TODO);
             Console.WriteLine(soda.Examine());
             Console.WriteLine(soda2.Examine());
             var vendingMachine = new VendingMachineServices();

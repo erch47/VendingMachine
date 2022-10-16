@@ -10,9 +10,15 @@ namespace VendingMachine.Models
     {
         private const int SodaVolume = 33;
         private const int SodaCost = 10;
+
+        public Sodas(string sodaName, int productId) : base(sodaName, productId)
+        {
+            this.ProductName = sodaName;
+            this.ProductPrice = SodaCost;
+        }
         public override string Examine()
         {
-            return $"This is a {SodaVolume} cl can of {ProductName}, it costs {SodaCost}";
+            return $"This is a {SodaVolume} cl can of {ProductName}, it costs {SodaCost} kr.";
         }
 
         public override void Use()

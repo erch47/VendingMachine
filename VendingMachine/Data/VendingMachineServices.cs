@@ -10,7 +10,7 @@ namespace VendingMachine.Data
     public class VendingMachineServices : IVending
     {
         private readonly int[] _denominations = new int[] {1, 5, 10, 20, 50, 100, 500, 1000};
-
+        readonly List<Product> _products = new List<Product>();
         public double MoneyPool { get; set; }
         
         public Product? Purchase(Product? product)
@@ -19,6 +19,14 @@ namespace VendingMachine.Data
             string pickProduct = Console.ReadLine();
 
             return MoneyPool >= product.ProductPrice ? product : null;
+        }
+
+        public List<Product> ProductList()
+        {
+            _products.Add(new Sodas("CocaCola", TODO));
+            _products.Add(new Sodas("Fanta", TODO));
+            _products.Add(new Sodas("Sprite", TODO));
+            return _products;
         }
 
         public List<string> ShowAll()
